@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function NavBar() {
+function NavBar({ itemInCart }) {
   const navBarLeft = () => (
     <div className="navbar--left">
       <img src="../main-logo.png" className="navbar--main_logo" alt="" />
@@ -22,7 +22,7 @@ function NavBar() {
           src="../shopping-cart.svg"
           alt="shopping cart outline."
         />
-        <div className="item-indicator"></div>
+        {itemInCart ? <div className="item-indicator"></div> : <div></div>}
       </div>
     </div>
   );

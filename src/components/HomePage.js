@@ -3,10 +3,10 @@ import NavBar from "./NavBar";
 import ShopNowButton from "./ShopNowButton";
 import ItemCategoryLink from "./ItemCategoryLink";
 
-function HomePage({ onProductData }) {
+function HomePage({ onProductData, itemInCart }) {
   return (
     <div className="homepage--container">
-      <NavBar />
+      <NavBar itemInCart={itemInCart} />
       <ShopNowButton />
       <ItemCategoryLink onProductData={onProductData} />
     </div>

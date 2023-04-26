@@ -5,6 +5,7 @@ import RouteSwitch from "./routes/RouteSwitch";
 
 function App() {
   const [productData, setProductData] = React.useState([]);
+  const [itemInCart, setItemInCart] = React.useState(0);
 
   const handleDataFetched = (data) => {
     setProductData(data);
@@ -13,7 +14,7 @@ function App() {
   return (
     <>
       <ApiFetcher onDataFetched={handleDataFetched} />
-      <RouteSwitch apiData={productData} />
+      <RouteSwitch apiData={productData} itemInCart={itemInCart} />
     </>
   );
 }
