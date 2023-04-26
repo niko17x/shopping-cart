@@ -16,11 +16,14 @@ function NavBar() {
       <Link to={"/shop"}>
         <h2 className="hover">Shop</h2>
       </Link>
-      <img
-        className="navbar--shopping_cart_outline hover"
-        src="../shopping-cart.svg"
-        alt="shopping cart outline."
-      />
+      <div className="navbar--cart_container">
+        <img
+          className="navbar--cart_outline hover"
+          src="../shopping-cart.svg"
+          alt="shopping cart outline."
+        />
+        <div className="item-indicator"></div>
+      </div>
     </div>
   );
 

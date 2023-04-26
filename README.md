@@ -8,8 +8,6 @@
   • Build individual card items that contains: Title; image; price; 'add to cart' button;
   • User submitting order should adjust all the items in the cart including quantity of items. Every time an item is added, the shopping cart should be shown (like a pop up).
 
-
-
 # Component setup:
     High level view:
     •• # public directory:
@@ -33,6 +31,19 @@
         • AddToCartButton.js => Button rendered in every 'ProductCard.js' component & in 'DetailedItemPage.js'.
         - Clicking on this component renders the specific item count in cart.
     
-    
+# Logic:
+*** Note: Primary objective for this project => React testing and routing!!!
 
-
+# Todo's:
+  •• ShoppingPage.js :
+    • Clicking on Add to Cart button:
+      [] Adds the product to the cart.
+      [] Add a 'red dot' design on the cart to indicate item being added to cart.
+    • Clicking on the shopping cart in the navbar:
+      [] Opens modal on the right side.
+    • What happens inside the 'cart modal':
+      [] Displays all items that have been added to cart.
+      [] Each item can be edited by:
+        - Removing/deleting items.
+        - Incrementing/decrementing item quantity.
+      [] 'X' to close the modal.

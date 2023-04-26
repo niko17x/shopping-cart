@@ -15,7 +15,7 @@ function ItemCategoryLink({ onProductData }) {
     return getUniqueCategories.map((item, index) => {
       return (
         <li className="links-categories hover" key={index}>
-          <Link to={`/${item}`}>{item.toUpperCase()}</Link>
+          <Link to={`/shop`}>{item.toUpperCase()}</Link>
         </li>
       );
     });

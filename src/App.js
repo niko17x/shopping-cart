@@ -1,12 +1,20 @@
 import React from "react";
 import "./style.css";
-import RouteSwitch from "./RouteSwitch";
+import ApiFetcher from "./components/ApiFetcher";
+import RouteSwitch from "./routes/RouteSwitch";
 
 function App() {
+  const [productData, setProductData] = React.useState([]);
+
+  const handleDataFetched = (data) => {
+    setProductData(data);
+  };
+
   return (
-    <div>
-      <RouteSwitch />
-    </div>
+    <>
+      <ApiFetcher onDataFetched={handleDataFetched} />
+      <RouteSwitch apiData={productData} />
+    </>
   );
 }
 
