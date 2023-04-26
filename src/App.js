@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import "./style.css";
 import ApiFetcher from "./components/ApiFetcher";
 import RouteSwitch from "./routes/RouteSwitch";
@@ -7,9 +7,9 @@ function App() {
   const [productData, setProductData] = React.useState([]);
   const [itemInCart, setItemInCart] = React.useState(0);
 
-  const handleDataFetched = (data) => {
+  const handleDataFetched = React.useCallback((data) => {
     setProductData(data);
-  };
+  }, []);
 
   return (
     <>
