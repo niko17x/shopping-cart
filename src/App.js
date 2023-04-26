@@ -1,9 +1,13 @@
 import React from "react";
 import "./style.css";
-import HomePage from "./components/HomePage";
+import RouteSwitch from "./RouteSwitch";
 
 function App() {
-  return <div>{<HomePage />}</div>;
+  return (
+    <div>
+      <RouteSwitch />
+    </div>
+  );
 }
 
 export default App;

@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function ItemCategoryLink({ onProductData }) {
-  const renderAllProductCategories = () => {
+  const renderAllItemCategories = () => {
     const allCategories = onProductData.map((product) => product.category);
     const getUniqueCategories = allCategories.reduce(
       (accumulator, currentValue) => {
@@ -14,7 +15,7 @@ function ItemCategoryLink({ onProductData }) {
     return getUniqueCategories.map((item, index) => {
       return (
         <li className="links-categories hover" key={index}>
-          {item.toUpperCase()}
+          <Link to={`/${item}`}>{item.toUpperCase()}</Link>
         </li>
       );
     });
@@ -22,7 +23,7 @@ function ItemCategoryLink({ onProductData }) {
 
   return (
     <div className="item_category_link--container">
-      <ul className="ul-item_category_link">{renderAllProductCategories()}</ul>
+      <ul className="ul-item_category_link">{renderAllItemCategories()}</ul>
     </div>
   );
 }

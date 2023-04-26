@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function NavBar() {
   const navBarLeft = () => (
@@ -9,8 +10,12 @@ function NavBar() {
 
   const navBarRight = () => (
     <div className="navbar--right">
-      <h2 className="hover">Home</h2>
-      <h2 className="hover">Shop</h2>
+      <Link to={"/"}>
+        <h2 className="hover">Home</h2>
+      </Link>
+      <Link to={"/shop"}>
+        <h2 className="hover">Shop</h2>
+      </Link>
       <img
         className="navbar--shopping_cart_outline hover"
         src="../shopping-cart.svg"

@@ -27,7 +27,7 @@
         • ShopNowButton.js => Main button for home page.
             - User gets sent to 'ShopPage.js' with all products shown (un-categorized).
         • ItemCategoryLink.js => Available categories listed on home page.
-            - User gets sent to 'ShopPage.js' with specific clicked on category items shown.
+            - User gets sent to 'ShopPage.js' with specific clicked on category item shown.
         • ProductCard.js => Cards that display a single product.
             - Each product card contains: product image, title, price, add-to-cart button.
         • AddToCartButton.js => Button rendered in every 'ProductCard.js' component & in 'DetailedItemPage.js'.
