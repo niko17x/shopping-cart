@@ -1,24 +1,21 @@
 import React from "react";
 
 function ProductCards({ onProductData }) {
-  // console.log(onProductData);
-  const renderCards = (image, title, price) => (
-    <div className="product_cards--card">
-      <img className="product_cards--image" src={image} alt="" />
-      <div className="product_cards--description">
-        <h4 className="product_cards--title">{title}</h4>
-        <span className="product_cards--price">{price}</span>
-      </div>
-    </div>
-  );
-
-  const getDataFromApi = () => {
+  const renderProductCards = () =>
     onProductData.map((product) => {
-      return renderCards(product.image, product.title, product.price);
+      return (
+        <div className="product_cards--card" key={product.id}>
+          <img className="product_cards--image" src={product.image} alt="" />
+          <div className="product_cards--description">
+            <h4 className="product_cards--title">{product.title}</h4>
+            <p className="product_cards--price">${product.price}</p>
+          </div>
+          <button className="product_cards--button">Add to Cart</button>
+        </div>
+      );
     });
-  };
 
-  return <div>{getDataFromApi()}</div>;
+  return <div className="product_cards--container">{renderProductCards()}</div>;
 }
 
 export default ProductCards;
