@@ -22,7 +22,7 @@ function NavBar({ itemInCart }) {
           src="../shopping-cart.svg"
           alt="shopping cart outline."
         />
-        {itemInCart ? <div className="item-indicator"></div> : <div></div>}
+        {itemInCart ? <div className="item-indicator"></div> : null}
       </div>
     </div>
   );

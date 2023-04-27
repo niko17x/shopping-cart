@@ -1,6 +1,7 @@
 import React from "react";
 
 function ApiFetcher({ onDataFetched }) {
+  // console.log("api data fetched.");
   const ALL_PRODUCTS_URL = "https://fakestoreapi.com/products";
   React.useEffect(() => {
     fetch(ALL_PRODUCTS_URL)

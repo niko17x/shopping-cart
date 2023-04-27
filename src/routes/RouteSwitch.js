@@ -3,6 +3,7 @@ import "../style.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ShoppingPage from "../components/ShoppingPage";
 import HomePage from "../components/HomePage";
+import ProductPage from "../components/ProductPage";
 
 const RouteSwitch = ({ apiData, itemInCart }) => {
   return (
@@ -17,6 +18,10 @@ const RouteSwitch = ({ apiData, itemInCart }) => {
           element={
             <ShoppingPage onProductData={apiData} itemInCart={itemInCart} />
           }
+        />
+        <Route
+          path="/product-page/:productId"
+          element={<ProductPage onProductData={apiData} />}
         />
       </Routes>
     </BrowserRouter>
