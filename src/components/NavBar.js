@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function NavBar({ itemInCart }) {
+function NavBar({ itemInCart, toggleModal }) {
   const navBarLeft = () => (
     <div className="navbar--left">
       <img src="../main-logo.png" className="navbar--main_logo" alt="" />
@@ -21,6 +21,7 @@ function NavBar({ itemInCart }) {
           className="navbar--cart_outline hover"
           src="../shopping-cart.svg"
           alt="shopping cart outline."
+          onClick={toggleModal}
         />
         {itemInCart ? <div className="item-indicator"></div> : null}
       </div>

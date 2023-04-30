@@ -5,7 +5,7 @@ import ShoppingPage from "../components/ShoppingPage";
 import HomePage from "../components/HomePage";
 import ProductPage from "../components/ProductPage";
 
-const RouteSwitch = ({ apiData, itemInCart }) => {
+const RouteSwitch = ({ apiData, itemInCart, modalDisplay, toggleModal }) => {
   return (
     <BrowserRouter>
       <Routes>
@@ -16,7 +16,12 @@ const RouteSwitch = ({ apiData, itemInCart }) => {
         <Route
           path="/shop"
           element={
-            <ShoppingPage onProductData={apiData} itemInCart={itemInCart} />
+            <ShoppingPage
+              onProductData={apiData}
+              itemInCart={itemInCart}
+              modalDisplay={modalDisplay}
+              toggleModal={toggleModal}
+            />
           }
         />
         <Route
