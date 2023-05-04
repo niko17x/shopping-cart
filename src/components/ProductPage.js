@@ -9,7 +9,6 @@ function ProductPage() {
   const product = productData.find(
     (item) => parseInt(item.id) === parseInt(productId)
   );
-  console.log(product);
 
   const renderProduct = () => {
     return product ? (

@@ -13,7 +13,6 @@ function ProductCards() {
             <div className="product_cards--description">
               <h4 className="product_cards--title">{item.title}</h4>
               <p className="product_cards--price">${item.price}</p>
-              <p>{item.id}</p>
             </div>
           </Link>
           <button
