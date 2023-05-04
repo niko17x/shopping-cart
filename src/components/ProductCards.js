@@ -1,25 +1,29 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { DataContext } from "../App";
 
-function ProductCards({ onProductData }) {
+function ProductCards() {
+  const { productData, addItemToCart } = React.useContext(DataContext);
   const renderProductCards = () =>
-    onProductData.map((product) => {
+    productData.map((item, index) => {
       return (
-        <Link to={`/product-page/${product.id}`}>
-          <div className="product_cards--card" key={product.id}>
-            <img className="product_cards--image" src={product.image} alt="" />
+        <div className="product_cards--card" key={`item-${index}`}>
+          <Link className="product_cards--a-link" to={`/item-page/${item.id}`}>
+            <img className="product_cards--image" src={item.image} alt="" />
             <div className="product_cards--description">
-              <h4 className="product_cards--title">{product.title}</h4>
-              <p className="product_cards--price">${product.price}</p>
+              <h4 className="product_cards--title">{item.title}</h4>
+              <p className="product_cards--price">${item.price}</p>
+              <p>{item.id}</p>
             </div>
-            <button
-              className="product_cards--button cart_button"
-              id={product.id}
-            >
-              Add to Cart
-            </button>
-          </div>
-        </Link>
+          </Link>
+          <button
+            className="product_cards--button cart_button"
+            id={item.id}
+            onClick={addItemToCart}
+          >
+            Add to Cart
+          </button>
+        </div>
       );
     });
 

@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { DataContext } from "../App";
 
-function NavBar({ itemInCart, toggleModal }) {
+function NavBar() {
+  const { itemInCart, toggleModal } = React.useContext(DataContext);
+
   const navBarLeft = () => (
     <div className="navbar--left">
       <img src="../main-logo.png" className="navbar--main_logo" alt="" />

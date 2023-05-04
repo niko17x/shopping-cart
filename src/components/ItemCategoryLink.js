@@ -1,9 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { DataContext } from "../App";
 
-function ItemCategoryLink({ onProductData }) {
+function ItemCategoryLink() {
+  const { productData } = React.useContext(DataContext);
+
   const renderAllItemCategories = () => {
-    const allCategories = onProductData.map((product) => product.category);
+    const allCategories = productData.map((product) => product.category);
     const getUniqueCategories = allCategories.reduce(
       (accumulator, currentValue) => {
         return accumulator.includes(currentValue)
@@ -14,7 +17,7 @@ function ItemCategoryLink({ onProductData }) {
     );
     return getUniqueCategories.map((item, index) => {
       return (
-        <li className="links-categories hover" key={index}>
+        <li className="links-categories hover" key={`item-${index}`}>
           <Link to={`/shop`}>{item.toUpperCase()}</Link>
         </li>
       );

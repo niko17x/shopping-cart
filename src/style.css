@@ -15,21 +15,47 @@
 }
 
 .hover:hover {
-  outline: 0px solid transparent;
   padding-bottom: 3px;
+  outline: 0px solid transparent;
+  transition: all 0.2s ease-in-out;
   border-bottom: 3px solid #CCABCD;
   -webkit-transition: all 0.8s ease-in-out;
-  transition: all 0.2s ease-in-out;
 }
 
 .item-indicator {
   height: 15px;
   width: 15px;
-  border: 2px solid red;
-  background-color: red;
+  margin-top: -3px;
   border-radius: 50%;
   margin-left: -11px;
-  margin-top: -3px;
+  border: 2px solid red;
+  background-color: red;
+}
+
+.edit_quantity {
+  width: 20px;
+  height: 20px;
+}
+
+.quantity_input {
+  width: 30px;
+  border: none;
+  text-align: center;
+  background-color: inherit;
+  border-bottom: 1px solid gray;
+  /* margin: auto; */
+}
+
+.quantity_label {
+  display: grid;
+  /* margin: auto; */
+}
+
+.edit_quantity_button {
+  background: transparent;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
 }
 
 li, a {
@@ -197,8 +223,13 @@ body {
   height: 300px;
   width: 300px;
   display: grid;
-  place-content: center;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;  border-radius: 5px;
+  /* place-content: center; */
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  border-radius: 5px;
+}
+
+.product_cards--a-link {
+  text-align: center;
 }
 
 .product_cards--image {
@@ -293,13 +324,11 @@ body {
 /* CartModal Section */
 
 .modal {
-  position: fixed;
-  right: -100%;
   top: 0;
   bottom: 0;
-  background-color: salmon;
-  /* opacity: 40%;  */
+  right: -100%;
   z-index: 9999;
+  position: fixed;
   transition: right 0.3s ease-out;
 }
 
@@ -313,10 +342,12 @@ body {
   top: 0;
   bottom: 0;
   width: 300px;
-  background-color: cornflowerblue;
+  border-left: 3px solid black;
   padding: 20px;
 
-  display: grid;
+  /* display: grid; */
+  background-color: rgba(255, 255, 255, .65);
+  backdrop-filter: blur(15px);
 }
 
 .close-button {
@@ -328,4 +359,43 @@ body {
   font-size: 2rem;
   margin-right: 10px;
   background-color: transparent;
+}
+
+.cart_modal--cards_in_modal {
+  margin-top: 40px;
+}
+
+.cart_modal--footer {
+}
+
+/* ModalProductCard Section */
+
+.modal_product_card--container {
+  display: grid;
+  height: 200px;
+  padding: 0.6rem;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  place-content: center;
+  grid-template-columns: repeat(2, 1fr);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.modal_product_card--image {
+  height: 100px;
+  width: 100px;
+}
+
+.modal_product_card--description {
+  display: grid;
+  gap: 15px;
+}
+
+.modal_product_car--edit_product {
+  gap: 1rem;
+  display: grid;
+  margin-top: 20px;
+  place-self: center;
+  grid-column: 1 / 3;
+  grid-template-columns: repeat(3, min-content);
 }

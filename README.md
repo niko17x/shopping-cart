@@ -20,7 +20,7 @@
         • HomePage.js => Main landing page.
         • NavBar.js => Contains: main logo image, home page, shop page, cart.
         • ShopPage.js => Page listing all product items for sale.
-        • DetailedItemPage.js => Page that displays item in detail when clicked.
+        • ProductPage.js => Page that displays item in detail when clicked.
         • DataFetcher.js => Contains all data retrieved from the fetch API.
         • ShopNowButton.js => Main button for home page.
             - User gets sent to 'ShopPage.js' with all products shown (un-categorized).
@@ -30,15 +30,19 @@
             - Each product card contains: product image, title, price, add-to-cart button.
         • AddToCartButton.js => Button rendered in every 'ProductCard.js' component & in 'DetailedItemPage.js'.
         - Clicking on this component renders the specific item count in cart.
+        • CartModal.js => Modal that appears when clicked on the shopping cart in NavBar.js.
+        • ModalProductCard.js => Product cards displayed inside modal.
     
 # Logic:
 *** Note: Primary objective for this project => React testing and routing!!!
 
 # Todo's:
   •• ShoppingPage.js :
+    • Clicking on the product card:
+      [check] opens a new page with product details.
     • Clicking on Add to Cart button:
+      [check] Add a 'red dot' design on the cart to indicate item being added to cart based on 'itemInCart' state located in App.js.
       [] Adds the product to the cart.
-      [] Add a 'red dot' design on the cart to indicate item being added to cart.
     • Clicking on the shopping cart in the navbar:
       [] Opens modal on the right side.
     • What happens inside the 'cart modal':
@@ -47,3 +51,11 @@
         - Removing/deleting items.
         - Incrementing/decrementing item quantity.
       [] 'X' to close the modal.
+
+
+# Personal Notes:
+  • When using React.useEffect, having a dependency can maintain the rerenders. However, if the dependency is defined outside of the React.useEffect component, this can cause constant rerenders to happen. To prevent const rerenders, use React.callBack with/without dependency.
+
+
+
+### Designing product cards inside of shopping cart modal.
