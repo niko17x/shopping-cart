@@ -14,7 +14,7 @@ const RouteSwitch = ({ apiData }) => {
         <Route path="/" element={<HomePage onProductData={productData} />} />
         <Route path="/shop" element={<ShoppingPage />} />
         <Route
-          path="/product-page/:productId"
+          path="/item-page/:productId"
           element={<ProductPage onProductData={productData} />}
         />
       </Routes>
