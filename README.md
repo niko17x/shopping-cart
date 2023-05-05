@@ -8,7 +8,7 @@
   • Build individual card items that contains: Title; image; price; 'add to cart' button;
   • User submitting order should adjust all the items in the cart including quantity of items. Every time an item is added, the shopping cart should be shown (like a pop up).
 
-# Component setup:
+# Directory Setup:
     High level view:
     •• # public directory:
       • mainLogo.svg => Main logo for navbar.
@@ -32,30 +32,17 @@
         - Clicking on this component renders the specific item count in cart.
         • CartModal.js => Modal that appears when clicked on the shopping cart in NavBar.js.
         • ModalProductCard.js => Product cards displayed inside modal.
-    
-# Logic:
-*** Note: Primary objective for this project => React testing and routing!!!
 
 # Todo's:
-  •• ShoppingPage.js :
-    • Clicking on the product card:
-      [check] opens a new page with product details.
-    • Clicking on Add to Cart button:
-      [check] Add a 'red dot' design on the cart to indicate item being added to cart based on 'itemInCart' state located in App.js.
-      [] Adds the product to the cart.
-    • Clicking on the shopping cart in the navbar:
-      [] Opens modal on the right side.
-    • What happens inside the 'cart modal':
-      [] Displays all items that have been added to cart.
-      [] Each item can be edited by:
-        - Removing/deleting items.
-        - Incrementing/decrementing item quantity.
-      [] 'X' to close the modal.
+  • Cart Modal:
+    [] Item quantities should be able to increment/decrement.
+    [] Remove items entirely.
+    [] Display total cost and is updated when quantity increases/decreases.
+    [] When modal is in focus, mouse activity is on modal - not the page.
+    [] Design modal.
 
 
 # Personal Notes:
   • When using React.useEffect, having a dependency can maintain the rerenders. However, if the dependency is defined outside of the React.useEffect component, this can cause constant rerenders to happen. To prevent const rerenders, use React.callBack with/without dependency.
 
 
-
-### Designing product cards inside of shopping cart modal.

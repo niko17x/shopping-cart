@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { DataContext } from "../App";
 
 function NavBar() {
-  const { itemInCart, toggleModal } = React.useContext(DataContext);
+  const { isItemInCart, toggleModal } = React.useContext(DataContext);
 
   const navBarLeft = () => (
     <div className="navbar--left">
@@ -26,7 +26,7 @@ function NavBar() {
           alt="shopping cart outline."
           onClick={toggleModal}
         />
-        {itemInCart ? <div className="item-indicator"></div> : null}
+        {isItemInCart ? <div className="item-indicator"></div> : null}
       </div>
     </div>
   );

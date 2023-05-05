@@ -2,7 +2,8 @@ import React from "react";
 import { DataContext } from "../App";
 
 function ModalProductCard() {
-  const { itemInCartData } = React.useContext(DataContext);
+  const { itemInCartData, addMinusQuantity, deleteProductCard } =
+    React.useContext(DataContext);
 
   const productCard = () =>
     itemInCartData.map((item, index) => {
@@ -13,20 +14,42 @@ function ModalProductCard() {
             <p className="modal_product_card--title">{item.title}</p>
             <p className="modal_product_card--price">${item.price}</p>
           </div>
-          <div className="modal_product_car--edit_product">
-            <button className="add_button edit_quantity_button">&#43;</button>
-            <label className="quantity_label">
-              <input
-                className="quantity_input"
-                type="number"
-                value={item.quantity}
-                readOnly
-              ></input>
-            </label>
-            <button className="minus_button edit_quantity_button">
-              &minus;
-            </button>
-          </div>
+          {item.quantity < 1 ? (
+            <div className="modal_product_card--confirm_delete">
+              <button
+                className="delete_button button_hover"
+                onClick={(event) => deleteProductCard(event)}
+                id={item.id}
+              >
+                Confirm Delete
+              </button>
+            </div>
+          ) : (
+            <div className="modal_product_card--edit_product">
+              <button
+                className="add_button edit_quantity_button"
+                id={item.id}
+                onClick={(event) => addMinusQuantity(event)}
+              >
+                &#43;
+              </button>
+              <label className="quantity_label">
+                <input
+                  className="quantity_input"
+                  type="number"
+                  value={item.quantity}
+                  readOnly
+                ></input>
+              </label>
+              <button
+                className="minus_button edit_quantity_button"
+                id={item.id}
+                onClick={(event) => addMinusQuantity(event)}
+              >
+                &minus;
+              </button>
+            </div>
+          )}
         </div>
       );
     });
