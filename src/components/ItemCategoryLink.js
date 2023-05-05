@@ -1,3 +1,5 @@
+// * Note: This component is not actively in use.
+
 import React from "react";
 import { Link } from "react-router-dom";
 import { DataContext } from "../App";

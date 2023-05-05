@@ -33,16 +33,6 @@
         • CartModal.js => Modal that appears when clicked on the shopping cart in NavBar.js.
         • ModalProductCard.js => Product cards displayed inside modal.
 
-# Todo's:
-  • Cart Modal:
-    [check] Item quantities should be able to increment/decrement.
-    [check] Remove items entirely.
-    [] Change 'Confirm Delete' button to allow user to re-add item.
-    [] Display total cost and is updated when quantity increases/decreases.
-    [] When modal is in focus, mouse activity is on modal - not the page.
-    [] Design modal.
-
-
 # Personal Notes:
   • When using React.useEffect, having a dependency can maintain the rerenders. However, if the dependency is defined outside of the React.useEffect component, this can cause constant rerenders to happen. To prevent const rerenders, use React.callBack with/without dependency.
 

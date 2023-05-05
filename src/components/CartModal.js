@@ -19,15 +19,25 @@ function CartModal() {
             <ModalProductCard />
           </div>
 
-          <div className="cart_modal--footer">
-            <p>
-              Total Price: $
-              {itemInCartData.reduce(function (accumulator, currentValue) {
-                return accumulator + currentValue.price * currentValue.quantity;
-              }, 0)}
-            </p>
-            <button className="check_out_button button_hover">Check Out</button>
-          </div>
+          {itemInCartData.length === 0 ? (
+            <div className="empty_cart_message">
+              <h3>Your Cart is Empty 🥺</h3>
+            </div>
+          ) : (
+            <div className="cart_modal--footer">
+              <p>
+                Total Price: $
+                {itemInCartData.reduce(function (accumulator, currentValue) {
+                  return (
+                    accumulator + currentValue.price * currentValue.quantity
+                  );
+                }, 0)}
+              </p>
+              <button className="check_out_button button_hover">
+                Check Out
+              </button>
+            </div>
+          )}
         </div>
       </div>
     );

@@ -14,10 +14,10 @@ function NavBar() {
   const navBarRight = () => (
     <div className="navbar--right">
       <Link to={"/"}>
-        <h2 className="hover">Home</h2>
+        <h2 className="navbar--home hover">Home</h2>
       </Link>
       <Link to={"/shop"}>
-        <h2 className="hover">Shop</h2>
+        <h2 className=" navbar--shop hover">Shop</h2>
       </Link>
       <div className="navbar--cart_container">
         <img

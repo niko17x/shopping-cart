@@ -2,10 +2,12 @@ import React from "react";
 import NavBar from "./NavBar";
 import { useParams } from "react-router";
 import { DataContext } from "../App";
+import CartModal from "./CartModal";
 
 function ProductPage() {
-  const { productData } = React.useContext(DataContext);
+  const { productData, addItemToCart } = React.useContext(DataContext);
   const { productId } = useParams();
+  // Get data from URL of current page. Use item.id to find matching product:
   const product = productData.find(
     (item) => parseInt(item.id) === parseInt(productId)
   );
@@ -19,7 +21,11 @@ function ProductPage() {
           <p className="product_page--description">{product.description}</p>
           <span className="product_page--price">${product.price}</span>
         </div>
-        <button className="product_page--button cart_button">
+        <button
+          className="product_page--button cart_button"
+          onClick={(event) => addItemToCart(event)}
+          id={product.id}
+        >
           Add to Cart
         </button>
       </>
@@ -31,7 +37,10 @@ function ProductPage() {
   return (
     <>
       <NavBar />
-      <div className="product_page--container">{renderProduct()}</div>
+      <div className="product_page--container">
+        <CartModal />
+        {renderProduct()}
+      </div>
     </>
   );
 }

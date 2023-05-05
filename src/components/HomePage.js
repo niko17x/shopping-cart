@@ -11,7 +11,7 @@ function HomePage() {
     <div className="homepage--container">
       <NavBar isItemInCart={isItemInCart} />
       <ShopNowButton />
-      <ItemCategoryLink onProductData={productData} />
+      {/* <ItemCategoryLink onProductData={productData} /> */}
     </div>
   );
 }
