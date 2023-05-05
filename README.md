@@ -35,8 +35,9 @@
 
 # Todo's:
   • Cart Modal:
-    [] Item quantities should be able to increment/decrement.
-    [] Remove items entirely.
+    [check] Item quantities should be able to increment/decrement.
+    [check] Remove items entirely.
+    [] Change 'Confirm Delete' button to allow user to re-add item.
     [] Display total cost and is updated when quantity increases/decreases.
     [] When modal is in focus, mouse activity is on modal - not the page.
     [] Design modal.

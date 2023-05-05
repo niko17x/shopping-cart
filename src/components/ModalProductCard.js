@@ -21,7 +21,14 @@ function ModalProductCard() {
                 onClick={(event) => deleteProductCard(event)}
                 id={item.id}
               >
-                Confirm Delete
+                Remove
+              </button>
+              <button
+                className="keep_item_button button_hover"
+                onClick={(event) => deleteProductCard(event)}
+                id={item.id}
+              >
+                Keep In Cart
               </button>
             </div>
           ) : (
@@ -33,14 +40,7 @@ function ModalProductCard() {
               >
                 &#43;
               </button>
-              <label className="quantity_label">
-                <input
-                  className="quantity_input"
-                  type="number"
-                  value={item.quantity}
-                  readOnly
-                ></input>
-              </label>
+              <p className="item_quantity">{item.quantity}</p>
               <button
                 className="minus_button edit_quantity_button"
                 id={item.id}

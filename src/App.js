@@ -8,19 +8,9 @@ export const DataContext = React.createContext();
 
 function App() {
   const [productData, setProductData] = React.useState([]);
-  const [isItemInCart, setIsItemInCart] = React.useState(0); // Indicates if item(s) in cart...
+  const [isItemInCart, setIsItemInCart] = React.useState(0);
   const [showModal, setShowModal] = React.useState(false);
   const [itemInCartData, setItemInCartData] = React.useState([]);
-
-  // React.useEffect(() => {
-  //   const checkIfItemInCart =
-  //     itemInCartData.length < 1 ? setIsItemInCart(false) : undefined;
-  //   return checkIfItemInCart;
-  // }, [itemInCartData]);
-
-  const foo = () => {
-    return itemInCartData.length === 1 ? setShowModal(true) : undefined;
-  };
 
   const handleDataFetched = React.useCallback((data) => {
     const addQuantityToData = data.map((item) => ({
@@ -50,14 +40,18 @@ function App() {
       selectedProduct.quantity = 1;
       setItemInCartData((prevData) => [...prevData, selectedProduct]);
       setIsItemInCart(true);
+      setShowModal(true);
     }
   };
 
   const addMinusQuantity = (event) => {
-    const selectedProductId = parseInt(event.target.id);
     const isAddButton = event.target.classList.contains("add_button");
     const increment = isAddButton ? 1 : -1;
+    mapItemInCartData(event, increment);
+  };
 
+  const mapItemInCartData = (event, increment) => {
+    const selectedProductId = parseInt(event.target.id);
     setItemInCartData((prevData) =>
       prevData.map((item) =>
         parseInt(item.id) === selectedProductId
@@ -69,10 +63,16 @@ function App() {
 
   const deleteProductCard = (event) => {
     const selectedProductId = parseInt(event.target.id);
+    const incrementByOne = 1;
     const updatedItems = itemInCartData.filter(
       (item) => parseInt(item.id) !== selectedProductId
     );
-    setItemInCartData(updatedItems);
+
+    if (event.target.classList.contains("delete_button")) {
+      setItemInCartData(updatedItems);
+    } else {
+      mapItemInCartData(event, incrementByOne);
+    }
 
     // Remove red indicator on cart outline in navbar:
     setIsItemInCart((prevValue) => {

@@ -3,7 +3,8 @@ import ModalProductCard from "./ModalProductCard";
 import { DataContext } from "../App";
 
 function CartModal() {
-  const { toggleModal, showModal } = React.useContext(DataContext);
+  const { toggleModal, showModal, itemInCartData } =
+    React.useContext(DataContext);
 
   const renderModal = () => {
     return (
@@ -19,8 +20,13 @@ function CartModal() {
           </div>
 
           <div className="cart_modal--footer">
-            <p>Total Price</p>
-            <button>Check Out</button>
+            <p>
+              Total Price: $
+              {itemInCartData.reduce(function (accumulator, currentValue) {
+                return accumulator + currentValue.price * currentValue.quantity;
+              }, 0)}
+            </p>
+            <button className="check_out_button button_hover">Check Out</button>
           </div>
         </div>
       </div>
