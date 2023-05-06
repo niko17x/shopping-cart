@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import { DataContext } from "../App";
+import { DataContext } from "../../App";
 
 function ItemCategoryLink() {
   const { productData } = React.useContext(DataContext);

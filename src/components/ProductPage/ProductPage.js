@@ -1,8 +1,8 @@
 import React from "react";
-import NavBar from "./NavBar";
+import NavBar from "../NavBar/NavBar";
+import CartModal from "../CartModal/CartModal";
 import { useParams } from "react-router";
-import { DataContext } from "../App";
-import CartModal from "./CartModal";
+import { DataContext } from "../../App";
 
 function ProductPage() {
   const { productData, addItemToCart } = React.useContext(DataContext);

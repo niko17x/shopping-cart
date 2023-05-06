@@ -1,8 +1,8 @@
 import React from "react";
-import NavBar from "./NavBar";
-import ShopNowButton from "./ShopNowButton";
-import ItemCategoryLink from "./ItemCategoryLink";
-import { DataContext } from "../App";
+import NavBar from "../NavBar/NavBar";
+import ShopNowButton from "../ShopNowButton/ShopNowButton";
+import { DataContext } from "../../App";
+// import ItemCategoryLink from "../ItemCategoryLink/ItemCategoryLink";
 
 function HomePage() {
   const { productData, isItemInCart } = React.useContext(DataContext);

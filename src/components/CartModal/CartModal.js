@@ -1,6 +1,6 @@
 import React from "react";
-import ModalProductCard from "./ModalProductCard";
-import { DataContext } from "../App";
+import ModalProductCard from "../ModalProductCard/ModalProductCard";
+import { DataContext } from "../../App";
 
 function CartModal() {
   const { toggleModal, showModal, itemInCartData } =
@@ -43,12 +43,7 @@ function CartModal() {
     );
   };
 
-  return (
-    <>
-      {renderModal()}
-      {/* <ModalProductCar} /> */}
-    </>
-  );
+  return <>{renderModal()}</>;
 }
 
 export default CartModal;

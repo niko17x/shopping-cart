@@ -1,7 +1,7 @@
 import React from "react";
-import NavBar from "./NavBar";
-import ProductCards from "./ProductCards";
-import CartModal from "./CartModal";
+import NavBar from "../NavBar/NavBar";
+import ProductCards from "../ProductCards/ProductCards";
+import CartModal from "../CartModal/CartModal";
 
 function ShoppingPage() {
   return (

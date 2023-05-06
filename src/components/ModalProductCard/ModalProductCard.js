@@ -1,5 +1,5 @@
 import React from "react";
-import { DataContext } from "../App";
+import { DataContext } from "../../App";
 
 function ModalProductCard() {
   const { itemInCartData, addMinusQuantity, deleteProductCard } =

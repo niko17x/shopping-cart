@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { DataContext } from "../App";
+import { DataContext } from "../../App";
 
 function ProductCards() {
   const { productData, addItemToCart } = React.useContext(DataContext);

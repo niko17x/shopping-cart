@@ -1,12 +1,12 @@
 import React from "react";
 import "../style.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ShoppingPage from "../components/ShoppingPage";
-import HomePage from "../components/HomePage";
-import ProductPage from "../components/ProductPage";
+import ShoppingPage from "../components/ShoppingPage/ShoppingPage";
+import HomePage from "../components/HomePage/HomePage";
+import ProductPage from "../components/ProductPage/ProductPage";
 import { DataContext } from "../App";
 
-const RouteSwitch = ({ apiData }) => {
+const RouteSwitch = () => {
   const { productData } = React.useContext(DataContext);
   return (
     <BrowserRouter>

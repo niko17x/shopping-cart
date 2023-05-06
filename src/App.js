@@ -1,10 +1,13 @@
 import React from "react";
 import "./style.css";
-import ApiFetcher from "./components/ApiFetcher";
-import RouteSwitch from "./routes/RouteSwitch";
-import CartModal from "./components/CartModal";
+import ApiFetcher from "../src/components/ApiFetcher/ApiFetcher";
+import RouteSwitch from "../src/routes/RouteSwitch";
 
 export const DataContext = React.createContext();
+
+// window.addEventListener("click", (event) => {
+//   console.log(event.target);
+// });
 
 function App() {
   const [productData, setProductData] = React.useState([]);
