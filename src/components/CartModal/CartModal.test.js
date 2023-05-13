@@ -5,6 +5,10 @@ import "@testing-library/jest-dom";
 import CartModal from "./CartModal";
 
 describe("CartModal", () => {
+  // !!!
+
+  // !!!
+
   test("renders cart modal with empty cart message", () => {
     const toggleModal = jest.fn();
     const itemInCartData = [];
@@ -39,7 +43,6 @@ describe("CartModal", () => {
     // Assert that the product cards are displayed
     expect(screen.getByText("Mens Cotton Jacket")).toBeInTheDocument();
     expect(screen.getByText(/white gold plated princess/i)).toBeInTheDocument();
-    screen.debug();
 
     // Assert that the total price is displayed correctly
     expect(screen.getByText("Total Price: $150")).toBeInTheDocument();
