@@ -40,7 +40,12 @@ function ModalProductCard() {
               >
                 &#43;
               </button>
-              <p className="item_quantity">{item.quantity}</p>
+              <p
+                className="item_quantity"
+                data-testid="paragraph--item_quantity"
+              >
+                {item.quantity}
+              </p>
               <button
                 className="minus_button edit_quantity_button"
                 id={item.id}

@@ -32,7 +32,7 @@ function NavBar() {
   );
 
   return (
-    <div className="navbar--container">
+    <div className="navbar--container" role="navigation">
       {navBarLeft()}
       {navBarRight()}
     </div>

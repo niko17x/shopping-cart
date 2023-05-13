@@ -9,16 +9,13 @@ function CartModal() {
   const renderModal = () => {
     return (
       <div className={`modal ${showModal ? "show" : ""}`}>
-        {/*  <div className="modal show"> */}
-        <div className="modal--content">
+        <div className="modal--content" role="dialog">
           <button className="close-button hover" onClick={toggleModal}>
             &times;
           </button>
-
           <div className="cart_modal--cards_in_modal">
             <ModalProductCard />
           </div>
-
           {itemInCartData.length === 0 ? (
             <div className="empty_cart_message">
               <h3>Your Cart is Empty 🥺</h3>

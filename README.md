@@ -35,5 +35,9 @@
 
 # Personal Notes:
   • When using React.useEffect, having a dependency can maintain the rerenders. However, if the dependency is defined outside of the React.useEffect component, this can cause constant rerenders to happen. To prevent const rerenders, use React.callBack with/without dependency.
+  • When using ARIA attributes (i.e. 'role'), do not assign just any value to it. There are preset valid ARIA roles that must be followed for accessibility reasons.
+  • when using the “AllBy” element selectors, you can target individual elements from the given array by using index positions ie: element[0]
+  • Some testing will require the matchers/assertions to wait for specific data to be loaded first before being able to directly test the element. 
+  • You can create functions for repetitive code inside the describe block and use it like a normal function with parameters passed in for all test blocks.
 
 
