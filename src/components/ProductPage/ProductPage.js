@@ -15,7 +15,11 @@ function ProductPage() {
   const renderProduct = () => {
     return product ? (
       <>
-        <img className="product_page--image" src={product.image} alt="" />
+        <img
+          className="product_page--image"
+          src={product.image}
+          alt={product.image}
+        />
         <div className="product_page--details">
           <h2 className="product_page--title">{product.title}</h2>
           <p className="product_page--description">{product.description}</p>

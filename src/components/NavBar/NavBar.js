@@ -23,10 +23,12 @@ function NavBar() {
         <img
           className="navbar--cart_outline hover"
           src="../shopping-cart.svg"
-          alt="shopping cart outline."
+          alt="shopping cart outline"
           onClick={toggleModal}
         />
-        {isItemInCart ? <div className="item-indicator"></div> : null}
+        {isItemInCart ? (
+          <div className="item-indicator" data-testid="item-indicator"></div>
+        ) : null}
       </div>
     </div>
   );
